@@ -1,10 +1,17 @@
 {
     "manifest_version": 3,
-    "name": "Hello Extensions Reload Test",
+    "name": "MemoMind",
     "description": "Base Level Extension",
     "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
     "action": {
       "default_popup": "hello.html",
       "default_icon": "./images/hello_imgae.png"
+    },
+    "background": {
+      "service_worker": "./scripts/background.js"
     }
   }
