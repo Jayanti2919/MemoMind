@@ -1,17 +1,24 @@
 {
-    "manifest_version": 3,
-    "name": "MemoMind",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "permissions": [
-      "activeTab",
-      "scripting"
-    ],
-    "action": {
-      "default_popup": "hello.html",
-      "default_icon": "./images/hello_imgae.png"
-    },
-    "background": {
-      "service_worker": "./scripts/background.js"
+  "manifest_version": 3,
+  "name": "MemoMind",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "./images/hello_imgae.png"
+  },
+  "background": {
+    "service_worker": "./scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content.js"]
     }
-  }
+  ]
+}
